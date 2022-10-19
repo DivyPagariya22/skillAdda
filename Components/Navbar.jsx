@@ -5,7 +5,7 @@ import logo from "../public/logo-major.jpg";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 
-export default function ({ isLogin }) {
+export default function Navbar({ isLogin }) {
   const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const notActive = "text-white  transition duration-50 md:hover:scale-125";

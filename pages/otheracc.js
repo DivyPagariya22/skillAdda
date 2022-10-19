@@ -17,7 +17,7 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default function ({ data }) {
+export default function OtherAcc({ data }) {
   const router = useRouter();
 
   return (

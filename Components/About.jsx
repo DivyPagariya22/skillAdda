@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function () {
+export default function About() {
   return (
     <div className='h-screen bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
       <div className='text-center p-14'>

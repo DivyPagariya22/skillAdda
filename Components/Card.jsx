@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { useRouter } from "next/router";
 
-export default function (props) {
+export default function Card(props) {
   const router = useRouter();
   const handleClick = (email) => {
     router.push({

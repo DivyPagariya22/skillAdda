@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient.js";
 import Router from "next/router";
 
-export default function () {
+export default function Details() {
   const router = useRouter();
   const {
     query: { email },

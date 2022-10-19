@@ -2,7 +2,7 @@ import React from "react";
 import { supabase } from "../utils/supabaseClient";
 import Router from "next/router";
 
-export default function signout() {
+export default function Signout() {
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {

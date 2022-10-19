@@ -15,7 +15,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function teachers({ data }) {
+export default function Teachers({ data }) {
   return (
     <div>
       <Feed list={data}></Feed>
