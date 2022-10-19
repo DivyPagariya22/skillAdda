@@ -135,3 +135,12 @@ export default function Requirement(props) {
     </div>
   );
 }
+
+/*
+
+git commit -m "commit message"                                     // commit your changes
+git remote add origin https://github.com/username/repo-name.git    // add remote repository URL which contains the required details
+git pull origin master                                             // always pull from remote before pushing
+git push -u origin master 
+
+*/
