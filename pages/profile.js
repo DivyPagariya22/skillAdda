@@ -5,7 +5,7 @@ import Profile from "../Components/Profile";
 import { useState, useEffect } from "react";
 import { supabase } from "../utils/supabaseClient";
 
-export default function Profile() {
+export default function ProfilePage() {
   const [curr_email, setCurr_Email] = useState("");
   const [details, setDetails] = useState({});
   useEffect(() => {

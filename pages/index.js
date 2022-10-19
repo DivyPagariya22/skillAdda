@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import Feed from "../Components/Feed";
 import Router from "next/router";
 
-export default function Home() {
+export default function HomePage() {
   const [session, setSession] = useState(null);
   useEffect(() => {
     async function getInitialSession() {

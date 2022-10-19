@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default function Feed({ data }) {
+export default function FeedPage({ data }) {
   return (
     <div>
       <Feed list={data}></Feed>

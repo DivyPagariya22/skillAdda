@@ -3,7 +3,7 @@ import Link from "next/link";
 import { supabase } from "../utils/supabaseClient.js";
 import Router from "next/router";
 
-export default function Signup() {
+export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
