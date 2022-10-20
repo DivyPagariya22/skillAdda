@@ -88,7 +88,7 @@ export default function Navbar() {
                 </li>
               ) : (
                 <li className={router.pathname == "/" ? active : notActive}>
-                  <Link href='/test'>
+                  <Link href='/'>
                     <a>Home</a>
                   </Link>
                 </li>
