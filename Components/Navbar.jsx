@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/logo-major.jpg";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
+import { useState, useEffect } from "react";
 
-export default function Navbar({ isLogin }) {
+export default function Navbar() {
+  const [session, setSession] = useState();
+  useEffect(() => {
+    async function getInitialSession() {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) {
+        console.log(error);
+      } else {
+        setSession(data);
+        console.log(data);
+      }
+    }
+    getInitialSession();
+  }, [session]);
   const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const notActive = "text-white  transition duration-50 md:hover:scale-125";
@@ -66,7 +80,7 @@ export default function Navbar({ isLogin }) {
               navbar ? "block" : "hidden"
             }`}>
             <ul className='items-center justify-center text-lg gap-2 space-y-8 md:flex md:space-x-6 md:space-y-0 font-mono'>
-              {isLogin ? (
+              {session && session.session ? (
                 <li className={router.pathname == "/feed" ? active : notActive}>
                   <Link href='/feed'>
                     <a>Feed</a>
@@ -93,7 +107,7 @@ export default function Navbar({ isLogin }) {
                   <a>Requirements</a>
                 </Link>
               </li>
-              {isLogin ? (
+              {session && session.session ? (
                 <li
                   className={
                     router.pathname == "/profile" ? active : notActive
@@ -110,7 +124,7 @@ export default function Navbar({ isLogin }) {
                   </Link>
                 </li>
               )}
-              {isLogin === true && (
+              {session && session.session && (
                 <li className='cursor-pointer text-white  transition duration-50 md:hover:scale-125'>
                   <span onClick={handleSignOut}>SignOut</span>
                 </li>

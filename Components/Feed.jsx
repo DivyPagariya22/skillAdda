@@ -11,7 +11,7 @@ export default function Feed(props) {
 
   return (
     <div className='bg-gradient-to-r from-gray-100 to-gray-300'>
-      <Navbar isLogin={true}></Navbar>
+      <Navbar></Navbar>
       {data.map((item, index) => {
         return <Card info={item}></Card>;
       })}

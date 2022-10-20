@@ -14,7 +14,7 @@ export default function ProfilePage() {
       if (error) {
         console.log(error);
       } else {
-        setCurr_Email(data.session.user.email);
+        setCurr_Email(data.session?.user.email);
         console.log(data);
       }
     }
