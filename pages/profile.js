@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
   return (
     <div className='relative'>
-      <Profile details={details}></Profile>
+      <Profile details={details} requirement={true}></Profile>
     </div>
   );
 }

@@ -32,8 +32,8 @@ export default function Requirement(props) {
 
   const handleDetails = async (e) => {
     e.preventDefault();
-    const { error } = await supabase.from("require").insert({
-      email: props.item.email,
+    let list = [];
+    const obj = {
       name: props.item.name,
       budget: price,
       description: bio,
@@ -41,7 +41,27 @@ export default function Requirement(props) {
       language: language,
       city: city,
       state: state,
+    };
+
+    const { data } = await supabase
+      .from("test")
+      .select("need")
+      .match({ email: props.item.email });
+
+    data.map((i) => {
+      i.need.map((item) => {
+        list.push(item);
+      });
     });
+    list.push(obj);
+    // console.log(list);
+
+    console.log(data);
+
+    const { error } = await supabase
+      .from("test")
+      .upsert({ need: list, email: props.item.email })
+      .eq("email", props.item.email);
     if (error) {
       console.log(error);
       alert("Cannot Save data");

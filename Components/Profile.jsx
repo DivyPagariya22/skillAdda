@@ -85,9 +85,11 @@ export default function Profile(props) {
             {props.details[0]?.role === 1 && (
               <h1 className='text-lg '>Total Students Taught : 32 </h1>
             )}
-            <button onClick={handleRequirement} className='mt-2 text-red-500'>
-              Post a Requirement
-            </button>
+            {props.requirement && (
+              <button onClick={handleRequirement} className='mt-2 text-red-500'>
+                Post a Requirement
+              </button>
+            )}
           </div>
           <div className='flex mt-8 mb-6'>
             <span className='w-1/5 text-sm font-light text-neutral-600'>

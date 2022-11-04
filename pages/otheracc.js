@@ -22,7 +22,7 @@ export default function OtherAcc({ data }) {
 
   return (
     <div>
-      <Profile details={data}></Profile>
+      <Profile details={data} requirement={false}></Profile>
     </div>
   );
 }

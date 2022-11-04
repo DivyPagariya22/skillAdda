@@ -15,7 +15,6 @@ export default function Navbar() {
         console.log(error);
       } else {
         setSession(data);
-        console.log(data);
       }
     }
     getInitialSession();
@@ -103,7 +102,7 @@ export default function Navbar() {
                 className={
                   router.pathname == "/requirements" ? active : notActive
                 }>
-                <Link href='/test'>
+                <Link href='/requirements'>
                   <a>Requirements</a>
                 </Link>
               </li>
