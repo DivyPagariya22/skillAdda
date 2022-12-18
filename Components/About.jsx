@@ -16,7 +16,7 @@ export default function About() {
               <div
                 className='font-semibold font-serif text-2xl
             bg-gradient-to-r bg-clip-text  text-transparent 
-            from-blue-200 via-blue-500 to-blue-700
+            from-blue-100 via-blue-500 to-blue-700
             animate-text
             '>
                 Subjects
@@ -29,7 +29,7 @@ export default function About() {
               <div
                 className='font-semibold font-serif text-2xl
             bg-gradient-to-r bg-clip-text  text-transparent 
-            from-blue-300 via-blue-500 to-blue-700
+            from-blue-100 via-blue-500 to-blue-700
             animate-text
             '>
                 Teachers
@@ -42,7 +42,7 @@ export default function About() {
               <div
                 className='font-semibold font-serif text-2xl
             bg-gradient-to-r bg-clip-text  text-transparent 
-            from-blue-300 via-blue-500 to-blue-700
+            from-blue-100 via-blue-500 to-blue-700
             animate-text
             '>
                 Languages
@@ -55,7 +55,7 @@ export default function About() {
               <div
                 className='font-semibold font-serif text-2xl
             bg-gradient-to-r bg-clip-text  text-transparent 
-            from-blue-300 via-blue-500 to-blue-700
+            from-blue-100 via-blue-500 to-blue-700
             animate-text
             '>
                 Skills

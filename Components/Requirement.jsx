@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { data, lang } from "../utils/detailsData";
+import { data_skill, lang } from "../utils/detailsData";
 import { supabase } from "../utils/supabaseClient";
 import Select from "react-select";
 import { useState } from "react";
@@ -85,7 +85,7 @@ export default function Requirement(props) {
                   style={{ color: "#e5e7eb" }}
                   isMulti
                   name='colors'
-                  options={data}
+                  options={data_skill}
                   className='basic-multi-select'
                   classNamePrefix='select'
                   onChange={handleSkills}
@@ -115,7 +115,7 @@ export default function Requirement(props) {
                   onChange={(e) => setPrice(e.target.value)}></input>
               </div>
               <div className='flex justify-between mb-4 mt-4'>
-                <label className='py-2 pl-4'>State: </label>
+                <label className='py-2 pl-4'>City: </label>
                 <input
                   className='text-sm  py-2 border-b border-gray-700 focus:outline-none focus:border-indigo-500 rounded-md bg-gray-100 px-3'
                   type='name'
@@ -124,7 +124,7 @@ export default function Requirement(props) {
                   onChange={(e) => setCity(e.target.value)}></input>
               </div>
               <div className='flex justify-between mb-4 mt-4'>
-                <label className='py-2 pl-4'>City: </label>
+                <label className='py-2 pl-4'>State: </label>
                 <input
                   className='text-sm  py-2 border-b border-gray-700 focus:outline-none focus:border-indigo-500 rounded-md bg-gray-100 px-3'
                   type='name'

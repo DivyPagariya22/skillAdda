@@ -2,7 +2,7 @@ import Image from "next/image.js";
 import React from "react";
 import { useState } from "react";
 import Select from "react-select";
-import { data, lang } from "../utils/detailsData.js";
+import { data_skill, lang } from "../utils/detailsData.js";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient.js";
 import Router from "next/router";
@@ -106,7 +106,7 @@ export default function DetailsPage() {
               style={{ color: "#e5e7eb" }}
               isMulti
               name='colors'
-              options={data}
+              options={data_skill}
               className='basic-multi-select'
               classNamePrefix='select'
               onChange={handleSkills}
