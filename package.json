@@ -15,8 +15,10 @@
     "@supabase/supabase-js": "^2.0.0",
     "next": "12.3.1",
     "next-auth": "^4.13.0",
+    "pusher-js": "^7.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "react-select": "^5.6.1"
   },
   "devDependencies": {

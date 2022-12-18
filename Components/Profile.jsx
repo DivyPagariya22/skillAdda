@@ -2,6 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Requirement from "./Requirement";
+import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Profile(props) {
   const active = "flex m-16";
@@ -16,6 +18,7 @@ export default function Profile(props) {
     setContainer(active);
     setClose(false);
   };
+
   return (
     <div className='relative'>
       <Navbar isLogin={true}></Navbar>
@@ -98,9 +101,15 @@ export default function Profile(props) {
             <span className='w-4/5 border-b-2 -ml-32'></span>
           </div>
           <div className='mt-6'>
-            <h1 className='tracking-wide text-lg mb-4'>
-              Contact No : {props.details[0]?.mobile}
-            </h1>
+            <div className='flex gap-4'>
+              <h1 className='tracking-wide text-lg mb-4'>
+                Contact No : {props.details[0]?.mobile}
+              </h1>
+              <Link href={"https://wa.me/" + props.details[0]?.mobile}>
+                <FaWhatsapp className='text-2xl hover:scale-150 cursor-pointer text-lime-700' />
+              </Link>
+            </div>
+
             <h1 className='tracking-wide text-lg'>Bio :</h1>
             <h1 className='italic tracking-wide'>{props.details[0]?.bio}</h1>
           </div>

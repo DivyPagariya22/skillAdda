@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { data_skill, lang } from "../utils/detailsData";
+import { data_skill, lang, states_list } from "../utils/detailsData";
 import { supabase } from "../utils/supabaseClient";
 import Select from "react-select";
 import { useState } from "react";
@@ -9,9 +9,24 @@ export default function Requirement(props) {
   const [skills, setSkills] = useState([]);
   const [language, setLanguage] = useState([]);
   const [price, setPrice] = useState(0);
-  const [state, setState] = useState("");
+  // const [state, setState] = useState("");
   const [city, setCity] = useState("");
   const [bio, setBio] = useState("");
+  const [state, setState] = useState("");
+  const [district, setDistrict] = useState("");
+  const [states, setStates] = useState(Object.keys(states_list));
+  const [districts, setDistricts] = useState([]);
+
+  const handleStateChange = (e) => {
+    const state = e.target.value;
+    setState(state);
+    setDistricts(states_list[state]);
+  };
+
+  const handleDistrictChange = (e) => {
+    const district = e.target.value;
+    setDistrict(district);
+  };
 
   const handleSkills = (options) => {
     // console.log(options);
@@ -39,7 +54,7 @@ export default function Requirement(props) {
       description: bio,
       skills: skills,
       language: language,
-      city: city,
+      city: district,
       state: state,
     };
 
@@ -114,24 +129,25 @@ export default function Requirement(props) {
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}></input>
               </div>
-              <div className='flex justify-between mb-4 mt-4'>
-                <label className='py-2 pl-4'>City: </label>
-                <input
-                  className='text-sm  py-2 border-b border-gray-700 focus:outline-none focus:border-indigo-500 rounded-md bg-gray-100 px-3'
-                  type='name'
-                  placeholder='Rajasthan'
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}></input>
+              <div>
+                <select value={state} onChange={handleStateChange}>
+                  <option value=''>Select State</option>
+                  {states.map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                <select value={district} onChange={handleDistrictChange}>
+                  <option value=''>Select District</option>
+                  {districts.map((district) => (
+                    <option key={district} value={district}>
+                      {district}
+                    </option>
+                  ))}
+                </select>
               </div>
-              <div className='flex justify-between mb-4 mt-4'>
-                <label className='py-2 pl-4'>State: </label>
-                <input
-                  className='text-sm  py-2 border-b border-gray-700 focus:outline-none focus:border-indigo-500 rounded-md bg-gray-100 px-3'
-                  type='name'
-                  placeholder='Chittorgarh'
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}></input>
-              </div>
+
               <div className='flex  mb-4 mt-4'>
                 <label className='py-2  pl-4'>Description: </label>
                 <textarea

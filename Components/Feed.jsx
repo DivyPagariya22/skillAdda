@@ -112,7 +112,7 @@ export default function Feed(props) {
         <div className='flex py-2 rounded-md p-1 mt-1 dark:hover:bg-gray-200'>
           <h1 className='text-center text-lg mr-4'>Skills :</h1>
           <Select
-            style={{ color: "#e5e7eb" }}
+            style={{ color: "#e5e7eb", padding: "4px" }}
             isMulti
             name='colors'
             options={data_skill}

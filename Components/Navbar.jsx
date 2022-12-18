@@ -92,6 +92,7 @@ export default function Navbar() {
                   </Link>
                 </li>
               )}
+
               <li
                 className={router.pathname == "/teachers" ? active : notActive}>
                 <Link href='/teachers'>
